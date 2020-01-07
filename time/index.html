@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <base target="_blank">
+  <meta charset="UTF-8" />
+  <title>Bryan Lurer</title>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style-time.css" />
+ </head>
+<script>
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+  </script>
+
+
+<body>
+
+<div id="intro">
+  <hr style="width: 50%; background-color: #d65a31; border-color: #d65a31;">
+    
+  <body onload="startTime()"><h3 style="font-family: 'Syncopate', sans-serif; font-weight: 10;">Manila <div id="txt"></div> </h3>
+
+  <hr style="width: 50%; background-color: #d65a31; border-color: #d65a31;">
+</div>
+
+</body>
+</html>
